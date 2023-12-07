@@ -6,12 +6,14 @@ const app = express()
 
 app.engine("handlebars", engine())
 app.set("view engine", "handlebars")
-app.set("views", "./src/views")
+app.set("views", "./views")
 
 app.get("*", (req, res) => {
-    res.sendStatus(404)
+    res.sendStatus(404);
 })
 
-app.listen(3000, () => {
-        console.log("Server on : ", 3000)
+
+const port = 3000;
+app.listen(port, () => {
+        console.log("Server on : ", port)
 })
