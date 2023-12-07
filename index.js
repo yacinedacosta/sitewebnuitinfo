@@ -8,6 +8,13 @@ app.engine("handlebars", engine())
 app.set("view engine", "handlebars")
 app.set("views", "./views")
 
+app.get('/', (req, res) => {
+    res.render("home", {
+        title: "Acceuil",
+        home: true
+    })
+})
+
 app.get("*", (req, res) => {
     res.sendStatus(404);
 })
