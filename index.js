@@ -1,0 +1,17 @@
+import express from "express"
+import path from "path"
+import { engine } from "express-handlebars"
+
+const app = express()
+
+app.engine("handlebars", engine())
+app.set("view engine", "handlebars")
+app.set("views", "./src/views")
+
+app.get("*", (req, res) => {
+    res.sendStatus(404)
+})
+
+app.listen(3000, () => {
+        console.log("Server on : ", 3000)
+})
