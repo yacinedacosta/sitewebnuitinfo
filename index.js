@@ -1,12 +1,18 @@
-import express from "express"
-import path from "path"
-import { engine } from "express-handlebars"
+import express from "express";
+import path from "path";
+import { engine } from "express-handlebars";
+import { dirname } from 'path';
 
-const app = express()
+import { fileURLToPath } from 'url'; // Import fileURLToPath to convert __filename to a path
 
-app.engine("handlebars", engine())
-app.set("view engine", "handlebars")
-app.set("views", "./src/views")
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const app = express();
+
+app.engine("handlebars", engine());
+app.set("view engine", "handlebars");
+app.set("views", path.join(__dirname, 'src/views'));
 
 app.get('/', (req, res) => {
     res.render("home", {
