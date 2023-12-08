@@ -31,8 +31,14 @@ app.get('/NeRienFaire', (req, res) => {
   })
 })
 
+app.get('/404', (req, res) => {
+  res.status(404);
+  res.sendFile(path.join(__dirname, "src/views/Tetrees.html"));
+})
+
 app.get("*", (req, res) => {
-  res.sendStatus(404);
+  res.status(404);
+  res.redirect("/404");
 });
 
 app.listen(3000, () => {
