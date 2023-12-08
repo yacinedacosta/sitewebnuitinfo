@@ -58,9 +58,9 @@
                 <div class="translate" id="google_translate_element" ></div>
                 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                 <script type="text/javascript">
-                    function googleTranslateElementInit() {
-                        new google.translate.TranslateElement(
-                                {pageLanguage:document.querySelector('html').lang,
+        function googleTranslateElementInit(a) {
+                        let goog = new google.translate.TranslateElement(
+                                {pageLanguage:a,
                                 includedLanguages: 'fr,en,zh-TW,es,ar,ja,hi,la,pt,ru',
                                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
                                 'google_translate_element')}
