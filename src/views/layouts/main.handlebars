@@ -48,12 +48,14 @@
                 </ul>
             </div>
             <div>
-                <div class="translate" id="google_translate_element"></div>
+                <div class="translate" id="google_translate_element" ></div>
                 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                 <script type="text/javascript">
                     function googleTranslateElementInit() {
                         new google.translate.TranslateElement(
-                                {pageLanguage:'fr'},
+                                {pageLanguage:document.querySelector('html').lang,
+                                includedLanguages: 'fr,en,zh-TW,es,ar,ja,hi,la,pt,ru',
+                                layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
                                 'google_translate_element')}
                 </script>
             </div>
