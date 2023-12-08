@@ -11,6 +11,7 @@ const __dirname = dirname(__filename);
 const app = express();
 
 app.use(express.static(path.join(__dirname, "public")));
+app.use("/assets", express.static(path.join(__dirname, "assets")));
 
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
