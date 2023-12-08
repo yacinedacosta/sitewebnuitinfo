@@ -1,6 +1,13 @@
-/*  */ 
-    .custom-green-bg {
-        background-color: #006400; /* Code couleur pour le vert foncé */
-    }
+.custom-green-bg {
+    background-color: #006400; /* Code couleur pour le vert foncé */
+}
 
-  
+#carouselHero .carousel-item:before {
+    content: "";
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
