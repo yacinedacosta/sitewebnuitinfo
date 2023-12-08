@@ -15,6 +15,11 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
     <!-- TITLE -->
     <title>AideEco - {{title}}</title>
+    <style>
+        .goog-te-gadget-icon{
+            visibility: hidden;
+        }
+    </style>
 </head>
 <body>
 <div class="container-fluid" style="padding: 0; overflow: hidden">
@@ -53,13 +58,31 @@
                 <div class="translate" id="google_translate_element" ></div>
                 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                 <script type="text/javascript">
-                    function googleTranslateElementInit() {
-                        new google.translate.TranslateElement(
-                                {pageLanguage:document.querySelector('html').lang,
+        function googleTranslateElementInit(a) {
+                        let goog = new google.translate.TranslateElement(
+                                {pageLanguage:a,
                                 includedLanguages: 'fr,en,zh-TW,es,ar,ja,hi,la,pt,ru',
                                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
                                 'google_translate_element')}
+                
+                function getUserCountry() {
+                    // Obtient la langue du navigateur, qui peut parfois inclure le pays
+                    var userLanguage = navigator.language || navigator.userLanguage;
+
+                    // Vous pouvez extraire le pays de la langue
+                    var userCountry = userLanguage.split('-')[0] || 'Unknown';
+
+                    // Affiche le pays dans la console (remplacez ceci par une utilisation réelle)
+                    console.log('User Country:', userCountry);
+                    console.log(document.querySelector("#google_translate_element"));
+                 }
+
+                // Appelle la fonction au chargement de la page
+                document.addEventListener('DOMContentLoaded', function () {
+                     getUserCountry();
+                });
                 </script>
+                
             </div>
         </div>
     </nav>
