@@ -24,6 +24,14 @@ app.get('/', (req, res) => {
     })
 })
 
+app.get('/NeRienFaire', (req, res) => {
+  res.render("homesimplifie", {
+      layout: "mainsimplifie",
+      title: "Ne rien faire",
+      home: true
+  })
+})
+
 app.get("*", (req, res) => {
     res.sendStatus(404)
 })
